@@ -18,5 +18,7 @@ public:
     void setCoefficient(size_t exponent, long double coefficient);
     long double getCoefficient(size_t exponent);
 
+    long double evaluateAt(double x);
+
     Polynomial multiply(Polynomial& multiplier);
 };

@@ -47,6 +47,11 @@ long double Polynomial::getCoefficient(size_t exponent)
     return this->coefficients[exponent];
 }
 
+long double Polynomial::evaluateAt(double x)
+{
+    return -1.0;
+}
+
 Polynomial Polynomial::multiply(Polynomial& multiplier)
 {
     Polynomial out;

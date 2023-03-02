@@ -33,6 +33,26 @@ TEST(PolynomialSetDegree, ZeroToLinearPolynomial)
     ASSERT_EQ(testPoly.getDegree(), 1);
 }
 
+TEST(PolynomialEvaluateAt, ZeroPolynomialYieldsZero)
+{
+    Polynomial testPoly;
+
+    ASSERT_EQ(testPoly.evaluateAt(573.0), 0);
+}
+
+TEST(PolynomialEvaluateAt, LinearPolynomialYieldsX)
+{
+    map<size_t, double> data;
+    data[1]++;
+
+    Polynomial testPoly = Polynomial(data);
+
+    ASSERT_EQ(testPoly.evaluateAt(45), 45);
+    ASSERT_EQ(testPoly.evaluateAt(-1), -1);
+    ASSERT_EQ(testPoly.evaluateAt(3), 3);
+    ASSERT_EQ(testPoly.evaluateAt(99999), 99999);
+}
+
 int main(int argc, char const *argv[])
 {
     testing::InitGoogleTest();
