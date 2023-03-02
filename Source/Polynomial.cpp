@@ -1,5 +1,5 @@
 
-#include"Polynomial.h"
+#include"../Headers/Polynomial.h"
 
 Polynomial::Polynomial()
 {
@@ -47,10 +47,13 @@ long double Polynomial::getCoefficient(size_t exponent)
     return this->coefficients[exponent];
 }
 
-long double Polynomial::evaluateAt(double x)
+long double Polynomial::evaluateAt(long double x)
 {
-    return -1.0;
+    long double out = 0.0;
+    
+    return out;
 }
+
 
 Polynomial Polynomial::multiply(Polynomial& multiplier)
 {
@@ -62,7 +65,7 @@ Polynomial Polynomial::multiply(Polynomial& multiplier)
     {
         for (size_t j = 0; j < this->degree; j++)
         {
-            out.coefficients[i*j] += this->coefficients[j] * multiplier.coefficients[i];
+            out.coefficients[i+j] += this->coefficients[j] * multiplier.coefficients[i];
         }
     }
 
