@@ -50,6 +50,11 @@ long double Polynomial::getCoefficient(size_t exponent)
 long double Polynomial::evaluateAt(long double x)
 {
     long double out = 0.0;
+
+    for (size_t i = 0; i <= this->getDegree(); i++)
+    {
+        out += this->coefficients[i] * power(x,i);
+    }
     
     return out;
 }
