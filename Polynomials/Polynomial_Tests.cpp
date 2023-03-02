@@ -22,13 +22,13 @@ TEST(PolynomialGetDegree, LinearPolynomial)
     ASSERT_EQ(testPoly.getDegree(), 1);
 }
 
-TEST(PolynomialSetDegree, ZeroToLinearPolynomial)
+TEST(PolynomialSetCoefficient, ZeroToLinearPolynomial)
 {
     Polynomial testPoly;
 
     ASSERT_EQ(testPoly.getDegree(), 0);
 
-    testPoly.setCoefficient(1,1);
+    testPoly.setCoefficient(1,27.2);
 
     ASSERT_EQ(testPoly.getDegree(), 1);
 }
