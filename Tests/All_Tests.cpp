@@ -1,4 +1,6 @@
 
+#include"Arithmetic_Tests.cpp"
+
 #include"Polynomial_Tests.cpp"
 
 int main(int argc, char const *argv[])
