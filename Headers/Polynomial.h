@@ -1,6 +1,8 @@
 
 #include<map>
 
+#include"Arithmetic.h"
+
 using namespace std;
 
 class Polynomial
@@ -20,5 +22,7 @@ public:
 
     long double evaluateAt(long double x);
 
+    Polynomial add(Polynomial& summand);
+    Polynomial multiply(long double multiplier);
     Polynomial multiply(Polynomial& multiplier);
 };
