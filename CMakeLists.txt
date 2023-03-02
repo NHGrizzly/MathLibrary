@@ -13,10 +13,21 @@ FetchContent_Declare(
 set(gtest_force_shared_crt ON CACHE BOOL "" FORCE)
 FetchContent_MakeAvailable(googletest)
 
-# Build the Polynomial object
-add_library(Polynomial OBJECT Polynomials/Polynomial.cpp)
+# Build the Basics library
+add_library(Basics Source/Arithmetic.cpp)
 
-# Now simply link against gtest or gtest_main as needed. Eg
-add_executable(Polynomial_Tests Polynomials/Polynomial_Tests.cpp)
-target_link_libraries(Polynomial_Tests gtest_main Polynomial)
-# add_test(NAME example_test COMMAND example)
+# Build the Polynomial object
+add_library(Polynomial OBJECT Source/Polynomial.cpp)
+target_link_libraries(Polynomial Basics)
+
+# Build the Arithmetic tests
+add_executable(Arithmetic_Tests Tests/Arithmetic_Tests.cpp)
+target_link_libraries(Arithmetic_Tests Basics gtest_main)
+
+# Build the Polynomial tests
+add_executable(Polynomial_Tests Tests/Polynomial_Tests.cpp)
+target_link_libraries(Polynomial_Tests Polynomial gtest_main)
+
+# Build all tests into one large test
+add_executable(All_Tests Tests/All_Tests.cpp)
+target_link_libraries(All_Tests Polynomial gtest_main)
