@@ -59,6 +59,29 @@ long double Polynomial::evaluateAt(long double x)
     return out;
 }
 
+Polynomial Polynomial::add(Polynomial& summand)
+{
+    Polynomial out;
+
+    for (size_t j = 0; j < this->degree; j++)
+    {
+        out.coefficients[j] = this->coefficients[j] + summand.coefficients[j];
+    }
+
+    return out;
+}
+
+Polynomial Polynomial::multiply(long double multiplier)
+{   
+    Polynomial out;
+
+    for (size_t j = 0; j < this->degree; j++)
+    {
+        out.coefficients[j] *= multiplier;
+    }
+
+    return out;
+}
 
 Polynomial Polynomial::multiply(Polynomial& multiplier)
 {
