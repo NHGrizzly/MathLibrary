@@ -33,6 +33,17 @@ TEST(PolynomialSetCoefficient, ZeroToLinearPolynomial)
     ASSERT_EQ(testPoly.getDegree(), 1);
 }
 
+TEST(PolynomialSetCoefficient, ZeroToHighOrderPolynomial)
+{
+    Polynomial testPoly;
+
+    ASSERT_EQ(testPoly.getDegree(), 0);
+
+    testPoly.setCoefficient(INT32_MAX, 51.9);
+
+    ASSERT_EQ(testPoly.getDegree(), INT32_MAX);
+}
+
 TEST(PolynomialEvaluateAt, ZeroPolynomialYieldsZero)
 {
     Polynomial testPoly;
