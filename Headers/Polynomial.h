@@ -5,7 +5,7 @@ using namespace std;
 
 class Polynomial
 {
-protected:
+private:
     size_t degree;
     map<size_t,double> coefficients;
 public:
@@ -18,7 +18,7 @@ public:
     void setCoefficient(size_t exponent, long double coefficient);
     long double getCoefficient(size_t exponent);
 
-    long double evaluateAt(double x);
+    long double evaluateAt(long double x);
 
     Polynomial multiply(Polynomial& multiplier);
 };
