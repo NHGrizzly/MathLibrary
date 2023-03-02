@@ -1,5 +1,5 @@
 
-#include"Polynomial.h"
+#include"../Headers/Polynomial.h"
 
 #include<iostream>
 #include"gtest/gtest.h"
@@ -53,27 +53,12 @@ TEST(PolynomialEvaluateAt, ZeroPolynomialYieldsZero)
 
 TEST(PolynomialEvaluateAt, LinearPolynomialYieldsX)
 {
-    map<size_t, double> data;
-    data[1]++;
+    Polynomial testPoly;
 
-    Polynomial testPoly = Polynomial(data);
+    testPoly.setCoefficient(1,1);
 
     ASSERT_EQ(testPoly.evaluateAt(45), 45);
     ASSERT_EQ(testPoly.evaluateAt(-1), -1);
     ASSERT_EQ(testPoly.evaluateAt(3), 3);
     ASSERT_EQ(testPoly.evaluateAt(99999), 99999);
 }
-
-int main(int argc, char const *argv[])
-{
-    testing::InitGoogleTest();
-
-    if(RUN_ALL_TESTS())
-        printf("FAILURE\n");
-    else
-        printf("SUCCESS\n");
-        
-
-    return 0;
-}
-
